@@ -4,6 +4,8 @@ import 'package:dio/dio.dart';
 import 'package:todo_list_app/core/exceptions/app_exceptions.dart';
 import 'package:todo_list_app/core/shared/data/parsing_utils/json_parsers.dart';
 
+
+
 extension DioExceptionParserX on DioException {
   AppExceptions toAppException() {
     switch (type) {

@@ -17,19 +17,9 @@ part 'routing_utils.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
-///The current router state
-//This is a workaround to get the current router state since goRouter is kinda picky to get the current state from the navigator key.
-GoRouterState? get goRouterState => _goRouterState;
-
-GoRouterState? _goRouterState;
-
 GoRouter router = GoRouter(
   initialLocation: Routes.splash,
   debugLogDiagnostics: kDebugMode,
-  redirect: (context, routerState) {
-    _goRouterState = routerState;
-    return null;
-  },
   routes: [
     standardRoute(
       path: Routes.splash,

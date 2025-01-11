@@ -9,6 +9,7 @@ import 'package:todo_list_app/core/shared/domain/entities/user.dart';
 
 part 'core_controller_cubit.freezed.dart';
 
+///Cubit to manage the authentication state of the app.
 @singleton
 class CoreControllerCubit extends Cubit<CoreControllerState> {
   CoreControllerCubit(

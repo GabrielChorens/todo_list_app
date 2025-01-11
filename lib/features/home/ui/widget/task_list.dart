@@ -9,6 +9,7 @@ import 'package:todo_list_app/features/home/ui/widget/filter_button.dart';
 import 'package:todo_list_app/features/home/ui/widget/task_card.dart';
 import 'package:todo_list_app/resources/l10n/l10n.dart';
 
+// TODO(Eval): With proper time enhance this widget to be more decomposed and deploy smarter state management
 class TaskList extends StatefulWidget {
   const TaskList({required this.tasks, super.key, this.coreControllerCubit});
 

@@ -37,9 +37,11 @@ class TaskCard extends StatelessWidget {
         ),
 
         onTap: () {
-          context.showEditDialog(
-            task: task,
-          );
+          if (isOwner) {
+            context.showEditDialog(
+              task: task,
+            );
+          }
         },
         subtitle: Column(
           mainAxisSize: MainAxisSize.min,
