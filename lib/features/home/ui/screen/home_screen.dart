@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:todo_list_app/core/di/app_injection.dart';
 import 'package:todo_list_app/core/shared/ui/extensions/extensions.dart';
 import 'package:todo_list_app/core/shared/ui/my_scaffold/my_scaffold.dart';
 import 'package:todo_list_app/core/shared/ui/my_scaffold/scaffold_params.dart';
@@ -10,14 +12,27 @@ import 'package:todo_list_app/features/home/ui/widget/menu_button.dart';
 import 'package:todo_list_app/features/home/ui/widget/task_list.dart';
 import 'package:todo_list_app/resources/l10n/l10n.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, HomeCubit? homeCubit}) : _homeCubit = homeCubit;
 
   final HomeCubit? _homeCubit;
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    super.initState();
+    (widget._homeCubit ?? getIt<HomeCubit>()).initialize();
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocScaffold<HomeCubit, HomeState, HomeState>(
-      bloc: _homeCubit,
+      bloc: widget._homeCubit,
+      loadingSpinnerType: LoadingSpinnerType.fullSizeBody,
       appBar: AppBar(
         leading: const MenuButton(),
         backgroundColor: context.colors.primary,

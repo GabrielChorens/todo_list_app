@@ -10,25 +10,38 @@ import 'package:todo_list_app/features/notifications/application/notification_se
 
 @lazySingleton
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._taskRepository) : super(const HomeState()) {
-    LocalNotificationService.create()
-        .then((value) => notificationService = value);
-    emit(
-      state.copyWith(
-        tasks: _taskRepository.getLocalTasks().sortedByPinnedStatus,
-      ),
-    );
-    syncTasks(
-      emitLoading: true,
-    ).then((_) => startSyncTimer());
-  }
+  HomeCubit(this._taskRepository) : super(const HomeState());
 
   final TaskRepository _taskRepository;
   LocalNotificationService? notificationService;
 
   Timer? _syncTimer;
 
+  void initialize({LocalNotificationService? service}) {
+    if (notificationService == null) {
+      if (service != null) {
+        notificationService = service;
+      } else {
+        LocalNotificationService.create()
+            .then((value) => notificationService = value);
+      }
+      emit(
+        state.copyWith(
+          tasks: _taskRepository.getLocalTasks().sortedByPinnedStatus,
+        ),
+      );
+      syncTasks(
+        emitLoading: true,
+      ).then((_) => startSyncTimer());
+    }
+  }
+
+  void stopSubscriptions() {
+    _syncTimer?.cancel();
+  }
+
   void startSyncTimer() {
+    _syncTimer?.cancel();
     _syncTimer = Timer.periodic(const Duration(minutes: 3), (_) {
       syncTasks();
     });
@@ -64,7 +77,12 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   void pinTask(int id) {
-    _updateTaskStatus(id, (task) => task.copyWith(isPinned: !task.isPinned));
+    final tasks = state.tasks
+        .map((task) =>
+            task.id == id ? task.copyWith(isPinned: !task.isPinned) : task)
+        .toIList();
+    _taskRepository.writeTasks(tasks);
+    emit(state.copyWith(tasks: tasks.sortedByPinnedStatus, isLoading: false));
   }
 
   void completeTask(int id) {
@@ -89,9 +107,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> _updateTasks(IList<Task> tasks) async {
     _taskRepository.writeTasks(tasks);
-    Future.delayed(const Duration(milliseconds: 500), () {
-      emit(state.copyWith(tasks: tasks.sortedByPinnedStatus, isLoading: false));
-    });
+    emit(state.copyWith(tasks: tasks, isLoading: false));
   }
 
   void tryToScheduleNotification(Task task) {
@@ -119,6 +135,8 @@ class HomeCubit extends Cubit<HomeState> {
 
 extension on IList<Task> {
   IList<Task> get sortedByPinnedStatus {
-    return sort((a, b) => b.isPinned.compareTo(a.isPinned)).toIList();
+    final pinnedTasks = where((task) => task.isPinned).toIList();
+    final unpinnedTasks = where((task) => !task.isPinned).toIList();
+    return pinnedTasks + unpinnedTasks;
   }
 }

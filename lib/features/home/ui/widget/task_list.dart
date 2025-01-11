@@ -100,7 +100,8 @@ class _TaskListState extends State<TaskList> {
             final task = widget.tasks[index];
             return _TaskHandler(
               hide: (task.isCompleted && isShowingOnlyPending) ||
-                  (!isCollaborationMode && !isOwner(task)),
+                  (!isCollaborationMode && !isOwner(task)) ||
+                  task.isErased,
               isCompleted: task.isCompleted,
               isOwner: isOwner(task),
               task: task,
