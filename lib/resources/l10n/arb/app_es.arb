@@ -1,0 +1,58 @@
+{
+"@@locale": "es",
+
+  "login": "Iniciar sesión",
+  "register": "Registrarse",
+
+  "title": "Título",
+  "description": "Descripción",
+  "date": "Fecha programada",
+  "enableNotifications": "Habilitar notificaciones",
+  "save": "Guardar",
+
+  "password": "Contraseña",
+
+  "noCurrentTasks": "Aun no tienes tareas",
+
+  "searchByTitle": "Buscar por título",
+  "language": "Idiomas",
+  "theme": "Temas",
+  "completedTasks": "Tareas completadas",
+
+  "userNotFound": "Usuario no encontrado",
+  "incorrectPassword": "Contraseña incorrecta",
+  "invalidEmailToRegister": "Correo inválido para registrarse",
+
+  "owner": "Propietario",
+  "other": "Otro",
+
+  "anUnexpectedErrorOccurred": "Ocurrió un error inesperado",
+  "toggleThemeMode": "Modo Oscuro",
+
+  "name": "Nombre",
+  "lastName": "Apellido",
+
+  "profile": "Perfil",
+  "logout": "Cerrar sesión",
+  "dashboard": "Información general",
+  "users": "Usuarios",
+  "taskResume": "Resumen de tareas",
+  "completedTasks": "Completadas",
+  "pendingTasks": "Pendientes",
+
+  "connectionError": "Problemas de conexión",
+  "connectionErrorDetail": "Al parecer tenemos problemas para conectarnos a la red, por favor inténtalo de nuevo",
+  "retry": "Volver a intentar",
+
+  "theme_gallery": "Galería de temas",
+  "lang": "Idioma",
+  "english": "Inglés",
+  "spanish": "Español",
+
+  "tutorial_0": "Bienvenido a la aplicación de tareas de Seek\nEn esta aplicación podrás gestionar tus tareas de forma sencilla y rápida.\n\n En la parte superior izquierda encontrarás un menú con opciones de configuración. En la parte inferior derecha encontrarás un botón para añadir nuevas tareas",
+  "tutorial_1": "Las tareas pueden programarse en una fecha y hora específica presionando el campo correspondiente. Puedes seleccionar el color que quieres tenga tu tarea o dejar que se asigne uno automáticamente. Al habilitar notificaciones la aplicación te recordará de la tarea.\n Recuerda guardar los cambios antes de salir.",
+  "tutorial_2": "En la pantalla principal encontrarás un listado con todas tus tareas. Tienes botones para eliminarlas y completarlas. Puedes editar una tarea al tocar en ella.\nEl boton de filtro te permite ver solo las tareas pendientes o todas las tareas. Por defecto se muestran solo las tareas pendientes.",
+  "tutorial_3": "El boton de fijar en la esquina izquierda de cada tarea te permite marcar una tarea como importante manteniendola en la parte superior de la lista. Puedes desfijarla en cualquier momento tocando el mismo botón. De igual manera, en la barra de búsqueda puedes filtrar tus tareas por título.",
+  "tutorial_4": "Al completar una tarea esta desaparecerá de la lista principal, puedes tocar en el botón de filtro para ver todas las tares y en estas tareas completadas puedes descompletarlas o eliminarlas si es necesario.",
+  "tutorial_5": "En último lugar, al tocar en el botón de menu en la parte superior izquierda puedes cambiar el idioma de la aplicación y seleccionar entre distintos temas de color muy interesantes.\n\n¡Listo! Ahora ya puedes empezar a gestionar tus tareas de forma eficiente. ¡Que disfrutes la aplicación!"
+}

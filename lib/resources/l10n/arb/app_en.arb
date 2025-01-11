@@ -1,0 +1,57 @@
+{
+"@@locale": "en",
+
+  "login": "Login",
+  "register": "Register",
+
+    "title": "Title",
+    "description": "Description",
+    "date": "Scheduled Date",
+    "enableNotifications": "Enable Notifications",
+    "save": "Save",
+
+    "userNotFound":  "User not found",
+    "incorrectPassword": "Incorrect password",
+    "invalidEmailToRegister":  "Invalid email to register",
+
+    "owner": "Owner",
+    "other": "Other",
+
+    "password": "Password",
+
+    "noCurrentTasks": "You have no tasks yet",
+
+    "searchByTitle": "Search by Title",
+    "language": "Languages",
+    "theme": "Themes",
+    "completedTasks": "Completed Tasks",
+    "theme_gallery": "Theme Gallery",
+     "toggleThemeMode": "Dark Mode",
+
+    "name": "Name",
+    "lastName": "Last Name",
+
+"profile": "Profile",
+"logout": "Logout",
+"dashboard": "Dashboard",
+"users": "Users",
+"taskResume": "Task Resume",
+"completedTasks": "Completed",
+"pendingTasks": "Pending",
+    "anUnexpectedErrorOccurred": "An unexpected error occurred",
+
+    "connectionError": "Connection error",
+    "connectionErrorDetail": "We are having trouble connecting to the server. Please check your internet connection and try again",
+    "retry": "Retry",
+
+    "lang": "Language",
+    "english": "English",
+    "spanish": "Spanish",
+
+    "tutorial_0": "Welcome to the Seek task application. In this application you can manage your tasks easily and quickly.\n\nIn the upper left corner you will find a menu with configuration options. In the lower right corner you will find a button to add new tasks",
+    "tutorial_1": "Tasks can be scheduled for a specific date and time by pressing the corresponding field. You can select the color you want your task to have.\nBy enabling notifications, the application will remind you of the task.\n\nRemember to save the changes before exiting.",
+    "tutorial_2": "On the main screen you will find a list of all your tasks. You have buttons to mange theme and can edit tasks by tapping on them.\nThe filter button allows you to see only pending tasks or all tasks.\nBy default, only pending tasks are shown.",
+    "tutorial_3": "The pin button in the left corner of each task allows you to mark a task as important, keeping it at the top of the list. You can unpin it at any time by tapping the same button. Similarly, in the search bar, you can filter your tasks by title.",
+    "tutorial_4": "When you complete a task, it will disappear from the main list. You can tap the filter button to see all tasks, and in these completed tasks, you can uncomplete them if necessary, or delete them.",
+    "tutorial_5": "Finally, by tapping the menu button in the upper left corner, you can change the application language and select from various interesting color themes.\n\nReady! Now you can start managing your tasks efficiently. Enjoy the application!"
+}
